@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', 
-    "channels",
     'core',
     "corsheaders",
     
@@ -66,17 +65,9 @@ TEMPLATES = [
 ]
 
 # Use correct ASGI app when using Channels
-ASGI_APPLICATION = 'backend.asgi.application'
+WSGI_APPLICATION = 'backend.asgi.application'
 
 # Use Redis for pub/sub
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],  # make sure Redis is running
-        },
-    },
-}
 
 DATABASES = {
     "default": {
