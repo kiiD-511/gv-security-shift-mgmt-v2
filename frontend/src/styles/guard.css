@@ -1,0 +1,25 @@
+/* frontend/src/styles/guard.css */
+
+.guard-home {
+  padding: 2rem;
+}
+
+.guard-home ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guard-home li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.guard-home button {
+  font-size: 0.9rem;
+}

@@ -1,0 +1,54 @@
+/* src/styles/SupervisorPortal.css */
+
+.supervisor-portal .page-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.kpi-grid {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.kpi-card {
+  flex: 1;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.entity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.entity-list li {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.status-active {
+  color: green;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.status {
+  margin-left: 0.5rem;
+  color: #555;
+}
+
+.action-buttons {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
