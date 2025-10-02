@@ -16,7 +16,7 @@ SECRET_KEY = config("SECRET_KEY", default="insecure")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool, default=True)
 
-ALLOWED_HOSTS = ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="gv-sigi.onrender.com").split(",")
+ALLOWED_HOSTS = ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="gv_sigi.onrender.com").split(",")
 
 # Application definition
 
