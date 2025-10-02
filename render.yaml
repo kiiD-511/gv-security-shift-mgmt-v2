@@ -1,0 +1,40 @@
+services:
+  # Backend (Django)
+  - type: web
+    name: gv-security-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn backend.wsgi:application --log-file -
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gv-security-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: gv-security-shift-mgmt.onrender.com,localhost,127.0.0.1
+
+  # Frontend (React Vite)
+  - type: web
+    name: gv-security-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://gv-security-shift-mgmt.onrender.com/api
+      - key: VITE_FB_API_KEY
+        value: AIzaSyDl1dF8s4MNVTjVWSFtqVninbNmetgmtfE
+      - key: VITE_FB_AUTH_DOMAIN
+        value: gv-ossms.firebaseapp.com
+      - key: VITE_FB_PROJECT_ID
+        value: gv-ossms
+
+databases:
+  - name: gv-security-db
+    plan: free
